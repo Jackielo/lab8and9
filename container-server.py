@@ -63,9 +63,8 @@ def images_index():
 def containers_show(id):
     """
     Inspect specific container
-
     """
-    output = docker('inspect' + id)
+    output = docker('inspect ' + id)
     resp = json.dumps(docker_ps_to_array(output))
 
     return Response(response=resp, mimetype="application/json")
